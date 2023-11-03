@@ -5,6 +5,7 @@ const rename = require("gulp-rename"); // Requerir el módulo gulp-rename para r
 const rimraf = require("rimraf").sync; // Requerir el módulo rimraf para eliminar archivos y directorios
 const browserSync = require("browser-sync").create(); // Crear una instancia de browser-sync
 
+
 function style() {
   // 1. ¿Dónde se encuentra mi archivo scss?
   //return gulp.src("./scss/**/*.scss")
@@ -36,6 +37,12 @@ function deleteOriginalCSS() {
   rimraf("./css/gulp.css");
 }
 
+function images() {
+  return gulp.src("./images/**/*") // Ruta de las imágenes de origen
+    .pipe(imagemin()) // Comprimir las imágenes
+    .pipe(gulp.dest("./dist/images")); // Ruta de destino para las imágenes comprimidas
+}
+
 function watch() {
   browserSync.init({
     server: {
@@ -59,3 +66,4 @@ exports.watch = watch;
 
 // Configurar la tarea predeterminada que se ejecutará al correr gulp sin especificar una tarea
 exports.default = gulp.series(style, watch);
+

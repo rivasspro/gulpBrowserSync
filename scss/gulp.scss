@@ -27,28 +27,29 @@ body.padre {
       mix-blend-mode: lighten;
       backdrop-filter: blur(.85em);
     }
-    h1{
+    & > *{
       z-index: 1;
+    }
+    h1{
       font-size: 2em;
-      text-decoration-line: underline;
-      text-decoration-style: wavy;
       &::first-letter{
         text-transform: uppercase;
       }
     }
     h1::after {
-      color: coral;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      color: #cf4647;
       content: attr(title);
       font-weight: 600;
-    }
-    p{
-      z-index: 1;
     }
     pre{
       background-color: white;
       border-radius: 1rem;
       padding: 1rem;
-      z-index: 1;
+    }
+    b{
+      background-color: yellow;
     }
   }
 }
