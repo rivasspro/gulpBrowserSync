@@ -1,0 +1,54 @@
+//Gulp test
+body.padre {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  height: 98vh;
+  box-sizing: border-box;
+   .hijo {
+    align-items: center;
+    background: rgb(227, 227, 227) url(https://static.vecteezy.com/system/resources/previews/000/393/734/original/vector-monochrome-abstract-contour-line-illustration.jpg)no-repeat left center/cover;
+    background-blend-mode: darken;
+    color: darken($color: #333, $amount: 0);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: calc(100% - 2em);
+    width: calc(100% - 2em);
+    position: relative;
+    &::before{
+      content: '';
+      border-radius: 1em;
+      position: absolute;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      background-color: rgba($color: #656538, $alpha: 0.25);
+      mix-blend-mode: lighten;
+      backdrop-filter: blur(.85em);
+    }
+    h1{
+      z-index: 1;
+      font-size: 2em;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      &::first-letter{
+        text-transform: uppercase;
+      }
+    }
+    h1::after {
+      color: coral;
+      content: attr(title);
+      font-weight: 600;
+    }
+    p{
+      z-index: 1;
+    }
+    pre{
+      background-color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      z-index: 1;
+    }
+  }
+}
